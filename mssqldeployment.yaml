@@ -1,11 +1,11 @@
-apiVersion: v1
-kind: Secret
-metadata:
-    name: mssql-secret
-type: Opaque
-data:
-    mssql-password: UEBzc3cwcmQK
----
+#apiVersion: v1
+#kind: Secret
+#metadata:
+#    name: mssql-secret
+#type: Opaque
+#data:
+#    mssql-password: UEBzc3cwcmQK
+#---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
