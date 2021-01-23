@@ -9,8 +9,8 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 192.168.33.180
-    path: "/mnt/ProdNas/nfs"
+    server: <NasIPAddress>
+    path: <NasPath>
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -62,7 +62,7 @@ spec:
         - containerPort: 1433
         env:
         - name: SA_PASSWORD
-          value: "P@ssw0rd"
+          value: <"YourPassword">
         - name: ACCEPT_EULA
           value: 'Y'
         - name: MSSQL_PID
