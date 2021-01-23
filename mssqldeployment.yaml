@@ -4,6 +4,7 @@
 #    name: mssql-secret
 #type: Opaque
 #data:
+# Bash64 on linux command
 #    mssql-password: UEBzc3cwcmQK
 #---
 apiVersion: apps/v1
