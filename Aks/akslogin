@@ -1,0 +1,4 @@
+az login
+az account set --subscription "Enterprise - SE - ANZ"
+az account set --subscription 966a1ed4-86c8-4062-94db-497a96865052
+az aks get-credentials --resource-group myAks --name myAksCluster
