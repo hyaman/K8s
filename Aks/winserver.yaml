@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: win
+  labels:
+    app: win
+spec:
+  replicas: 2
+  template:
+    metadata:
+      name: win
+      labels:
+        app: win
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": windows
+      containers:
+      - name: win
+        image: mcr.microsoft.com/windows/server
+       # resources:
+       #  limits:
+       #     cpu: 1
+       #     memory: 00M
+       #   requests:
+       #     cpu: .1
+       #     memory: 300M
+        ports:
+          - containerPort: 3389
+  selector:
+    matchLabels:
+      app: win
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: win
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 3389
+  selector:
+    app: win
